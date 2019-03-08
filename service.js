@@ -32,7 +32,7 @@ module.exports = (app) => {
   
   //TESTER
   app.get('/bot/tester', (req, res) => {
-    const { user, text } = {user: "Frank", text: req.query.text};
+    const { user, text } = {user: "rohit", text: req.query.text};
     // construct message to bot from the client message format
     const MessageModel = webhook.MessageModel();
     const message = {
