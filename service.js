@@ -54,7 +54,7 @@ module.exports = (app) => {
   app.post('/bot/sendmessage', (req, res) => {
       logger.info("req.body = "+JSON.stringify(req.body));
     
-      const { user, text } = {user: "rohitdhamija", text: req.body.text};
+      const { user, text } = {user: req.body.userId, text: req.body.messagePayload};
     
     // construct message to bot from the client message format
     const MessageModel = webhook.MessageModel();
