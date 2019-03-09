@@ -2,12 +2,8 @@ const OracleBot = require('@oracle/bots-node-sdk');
 const { WebhookClient, WebhookEvent } = OracleBot.Middleware;
 
 module.exports = (app) => {
-  var self = this;
 
-
-  this.randomIntInc = function (low, high) {
-    return Math.floor(Math.random() * (high - low + 1) + low);
-  };    
+    
     
   const logger = console;
   // initialize the application with OracleBot
@@ -61,7 +57,7 @@ module.exports = (app) => {
     // construct message to bot from the client message format
     const MessageModel = webhook.MessageModel();
     const message = {
-      userId:  self.randomIntInc(1000000, 9999999).toString(),
+      userId:  "rohitdhamija",
       messagePayload: MessageModel.textConversationMessage(text)
     };
     // send to bot webhook channel
