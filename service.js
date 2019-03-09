@@ -50,7 +50,7 @@ module.exports = (app) => {
   // Integrate with messaging client according to their specific SDKs, etc.
   app.post('/bot/sendmessage', (req, res) => {
     const { user, text } = req.body;
-    logger.info("req.body"+req.body);
+    logger.info("req.body"+JSON.stringify(req.body));
     // construct message to bot from the client message format
     const MessageModel = webhook.MessageModel();
     const message = {
