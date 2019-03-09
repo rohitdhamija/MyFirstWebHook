@@ -61,7 +61,7 @@ module.exports = (app) => {
     // construct message to bot from the client message format
     const MessageModel = webhook.MessageModel();
     const message = {
-      userId: self.randomIntInc(1000000, 9999999).toString();,
+      userId:  self.randomIntInc(1000000, 9999999).toString(),
       messagePayload: MessageModel.textConversationMessage(text)
     };
     // send to bot webhook channel
