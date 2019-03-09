@@ -11,8 +11,8 @@ module.exports = (app) => {
   // add webhook integration
   const webhook = new WebhookClient({
     channel: {
-      url: process.env.BOT_WEBHOOK_URL,
-      secret: process.env.BOT_WEBHOOK_SECRET,
+      url: "https://botlhr1I0050HC05D56bots-mpaasocimt.botmxp.ocp.oraclecloud.com:443/connectors/v1/tenants/idcs-6d466372210e4300bb31f4db15e8e96c/listeners/webhook/channels/20b1820d-fe7b-4f57-9168-cda9ee12c893",
+      secret: "KtU9p3VeteJbTvCrYIFAwkb6GfG75G01"
     }
   });
   // Add webhook event handlers (optional)
@@ -21,7 +21,7 @@ module.exports = (app) => {
     .on(WebhookEvent.MESSAGE_SENT, message => logger.info('Message to bot:', message))
     .on(WebhookEvent.MESSAGE_RECEIVED, message => {
       // message was received from bot. forward to messaging client.
-      logger.info('Message from bot:', message);
+      logger.info('Message from bot....:', message);
       // TODO: implement send to client...
     });
 
@@ -32,7 +32,7 @@ module.exports = (app) => {
   
   //TESTER
   app.get('/bot/tester', (req, res) => {
-    const { user, text } = {user: "rohit", text: req.query.text};
+    const { user, text } = {user: "Frank", text: req.query.text};
     // construct message to bot from the client message format
     const MessageModel = webhook.MessageModel();
     const message = {
